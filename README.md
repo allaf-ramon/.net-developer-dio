@@ -10,7 +10,7 @@ Este repositório contém os desafios que realizei ao longo do curso **.NET Deve
 
 ## 📂 Desafios Realizados
 
-### 1. [Desafio Estacionamento](https://github.com/Gleipn/.net-developer-dio/tree/desafioEstacionamento)
+### 1. [Desafio Estacionamento](https://github.com/allaf-ramon/.net-developer-dio/tree/desafioEstacionamento)
 
 **Contexto**: Criação de um sistema para gerenciar um estacionamento, permitindo cadastrar veículos, listar os veículos estacionados e realizar a remoção com o cálculo de valor cobrado por hora.
 
@@ -21,7 +21,7 @@ Este repositório contém os desafios que realizei ao longo do curso **.NET Deve
 
 ---
 
-### 2. [Desafio Hospedagem](https://github.com/Gleipn/.net-developer-dio/tree/desafioHospedagem)
+### 2. [Desafio Hospedagem](https://github.com/allaf-ramon/.net-developer-dio/tree/desafioHospedagem)
 
 **Contexto**: Desenvolvimento de um sistema de reservas para um hotel, utilizando conceitos de POO para gerenciar hóspedes, suítes e reservas.
 
@@ -32,7 +32,7 @@ Este repositório contém os desafios que realizei ao longo do curso **.NET Deve
 
 ---
 
-### 3. [Desafio POO - Celulares](https://github.com/Gleipn/.net-developer-dio/tree/desafioPOO)
+### 3. [Desafio POO - Celulares](https://github.com/allaf-ramon/.net-developer-dio/tree/desafioPOO)
 
 **Contexto**: Modelagem de um sistema que trabalha com celulares, utilizando abstração e herança para permitir que diferentes marcas de celulares (Nokia e iPhone) tenham comportamentos distintos.
 
@@ -43,7 +43,7 @@ Este repositório contém os desafios que realizei ao longo do curso **.NET Deve
 
 ---
 
-### 4. [Desafio Banco de Dados](https://github.com/Gleipn/.net-developer-dio/tree/desafioDB)
+### 4. [Desafio Banco de Dados](https://github.com/allaf-ramon/.net-developer-dio/tree/desafioDB)
 
 **Contexto**: Realização de diversas consultas em um banco de dados de filmes, utilizando SQL Server para extrair informações sobre filmes, atores e gêneros.
 
@@ -54,7 +54,7 @@ Este repositório contém os desafios que realizei ao longo do curso **.NET Deve
 
 ---
 
-### 5. [Desafio API - Gerenciador de Tarefas](https://github.com/Gleipn/.net-developer-dio/tree/desafioAPI)
+### 5. [Desafio API - Gerenciador de Tarefas](https://github.com/allaf-ramon/.net-developer-dio/tree/desafioAPI)
 
 **Contexto**: Desenvolvimento de um sistema de gerenciamento de tarefas (CRUD) utilizando Web API em .NET, permitindo listar, adicionar, atualizar e excluir tarefas.
 
@@ -65,7 +65,7 @@ Este repositório contém os desafios que realizei ao longo do curso **.NET Deve
 
 ---
 
-### 6. [Desafio Testes Unitários](https://github.com/Gleipn/.net-developer-dio/tree/desafioTestes)
+### 6. [Desafio Testes Unitários](https://github.com/allaf-ramon/.net-developer-dio/tree/desafioTestes)
 
 **Contexto**: Implementação de testes unitários em um sistema existente, com o objetivo de garantir a qualidade e resiliência do software.
 
@@ -76,7 +76,7 @@ Este repositório contém os desafios que realizei ao longo do curso **.NET Deve
 
 ---
 
-### 7. [Desafio Azure - Sistema de RH](https://github.com/Gleipn/.net-developer-dio/tree/desafioAzure)
+### 7. [Desafio Azure - Sistema de RH](https://github.com/allaf-ramon/.net-developer-dio/tree/desafioAzure)
 
 **Contexto**: Desenvolvimento de um sistema de RH para cadastro de funcionários, utilizando Azure para hospedagem, banco de dados SQL e armazenamento de logs.
 
@@ -102,4 +102,4 @@ Ao final deste curso, adquiri um conhecimento sólido em desenvolvimento de apli
 
 ---
 
-👨‍💻 Desenvolvido por [Gleipn](https://github.com/Gleipn)
+👨‍💻 Desenvolvido por [Allaf](https://github.com/allaf-ramon)
