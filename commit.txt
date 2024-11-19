@@ -1,0 +1,108 @@
+diff --git a/Dominio/DTOs/LoginDTO.cs b/Dominio/DTOs/LoginDTO.cs
+index bbae104..f4292bf 100644
+--- a/Dominio/DTOs/LoginDTO.cs
++++ b/Dominio/DTOs/LoginDTO.cs
+@@ -2,6 +2,6 @@ namespace MinimalApi.DTOs;
+ 
+ public class LoginDTO
+ {
+-    public string Email { get; set; }
+-    public string Senha { get; set; }
++    public string Email { get; set; } = default!;
++    public string Senha { get; set; } = default!;
+ }
+\ No newline at end of file
+diff --git a/Infraestrutura/Database/DbContext.cs b/Infraestrutura/Database/DbContext.cs
+deleted file mode 100644
+index 869e405..0000000
+--- a/Infraestrutura/Database/DbContext.cs
++++ /dev/null
+@@ -1,6 +0,0 @@
+-namespace MinimalApi.Infraestrutura.Database
+-
+-public class DbContext
+-{
+-    
+-}
+\ No newline at end of file
+diff --git a/Program.cs b/Program.cs
+index 22cd83b..045a0bd 100644
+--- a/Program.cs
++++ b/Program.cs
+@@ -1,12 +1,30 @@
++using Microsoft.AspNetCore.Mvc;
++using Microsoft.EntityFrameworkCore;
++using MinimalApi.Dominio.Interfaces;
++using MinimalApi.Dominio.Servicos;
++using MinimalApi.DTOs;
++using MinimalApi.Infraestrutura.Database;
++
+ var builder = WebApplication.CreateBuilder(args);
++
++builder.Services.AddScoped<IAdministradorServico, AdministradorServico>();
++
++var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
++builder.Services.AddDbContext<ApiContext>(options =>
++    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
++
+ var app = builder.Build();
+ 
+ app.MapGet("/", () => "Hello World!");
+ 
+-app.MapPost("/Login", (MinimalApi.DTOs.LoginDTO loginDTO) => 
++app.MapPost("/Login", ([FromBody] LoginDTO loginDTO, IAdministradorServico administradorServico) =>
+ {
+-    if (loginDTO.Email == "email@email" && loginDTO.Senha == "12345")
++    var admin = administradorServico.Login(loginDTO);
++
++    if (admin != null)
++    {
+         return Results.Ok("Logado com sucesso!");
++    }
+ 
+     return Results.BadRequest("Usuário ou senha inválidos!");
+ });
+diff --git a/appsettings.Development.json b/appsettings.Development.json
+index 0c208ae..b17efe1 100644
+--- a/appsettings.Development.json
++++ b/appsettings.Development.json
+@@ -4,5 +4,8 @@
+       "Default": "Information",
+       "Microsoft.AspNetCore": "Warning"
+     }
++  },
++  "ConnectionStrings": {
++    "DefaultConnection": "Server=localhost;Port=3306;Database=MinimalApi;Uid=root;Pwd=root;"
+   }
+ }
+diff --git a/appsettings.json b/appsettings.json
+index 10f68b8..2f27a1e 100644
+--- a/appsettings.json
++++ b/appsettings.json
+@@ -5,5 +5,8 @@
+       "Microsoft.AspNetCore": "Warning"
+     }
+   },
+-  "AllowedHosts": "*"
++  "AllowedHosts": "*",
++  "ConnectionStrings": {
++    "DefaultConnection": "Server=localhost;Port=3306;Database=MinimalApi;Uid=root;Pwd=root;"
++  }
+ }
+diff --git a/minimal-api.csproj b/minimal-api.csproj
+index e707f50..a697064 100644
+--- a/minimal-api.csproj
++++ b/minimal-api.csproj
+@@ -13,11 +13,11 @@
+       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+       <PrivateAssets>all</PrivateAssets>
+     </PackageReference>
+-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.11" />
+     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.11">
+       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+       <PrivateAssets>all</PrivateAssets>
+     </PackageReference>
++    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="8.0.2" />
+   </ItemGroup>
+ 
+ </Project>
