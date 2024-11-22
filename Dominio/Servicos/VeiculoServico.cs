@@ -47,6 +47,7 @@ public class VeiculoServico : IVeiculoServico
         }
 
         const int itensPorPagina = 10;
+        
         veiculos = veiculos.Skip((pagina - 1) * itensPorPagina).Take(itensPorPagina);
 
         return veiculos.ToList();
