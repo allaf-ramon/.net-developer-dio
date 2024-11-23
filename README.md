@@ -11,7 +11,7 @@ Uma API minimalista desenvolvida em .NET 8 para gerenciamento de veículos e adm
 ## Tecnologias Utilizadas
 - .NET 8
 - Entity Framework Core
-- SQL Server
+- MySQL
 - JWT para autenticação
 - MSTest para testes
 - Swagger/OpenAPI
