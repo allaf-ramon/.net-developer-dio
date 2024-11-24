@@ -22,11 +22,6 @@ Uma API minimalista desenvolvida em .NET 8 para gerenciamento de veículos e adm
    git clone https://github.com/seu-usuario/minimal-api.git
 
 2. Configure a string de conexão no arquivo appsettings.json:
-   {
-     "ConnectionStrings": {
-       "DefaultConnection": "Server=localhost;Database=MinimalApiDB;Trusted_Connection=True;"
-     }
-   }
 
 3. Execute as migrações do banco de dados:
    dotnet ef database update
